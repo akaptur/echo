@@ -16,7 +16,7 @@ MAX = 65535
 def recvall(socket):
     data = ''
     more = socket.recv(MAX) 
-    while more <> '':
+    while more:
         data += more
         more = socket.recv(MAX)
     return data
@@ -50,7 +50,7 @@ if 2 <= len(sys.argv) <=3 and sys.argv[1] == 'server':
         print "Accepted connection from " + str(peer_addr)
         
         message = recvall(connection)
-        if message <> '':
+        if message:
             print "Received '" + message + "'"
             connection.sendall(message)
         connection.close()
